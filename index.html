@@ -5,17 +5,66 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Iqbal – My Inner Portrait</title>
 <style>
-* { margin:0; padding:0; box-sizing:border-box; font-family:Verdana,sans-serif; }
+* { margin:0; padding:0; box-sizing:border-box; font-family:Verdana,sans-serif; scroll-behavior: smooth; }
 
-/* Body with background */
 body {
   background: url('assets/winter-night.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #f5f5f5;
-  line-height: 1.6;
-  scroll-behavior: smooth;
   position: relative;
   overflow-x: hidden;
+}
+
+/* Overlay for dark theme sections */
+.section {
+  background: rgba(20,20,20,0.8);
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 50px auto;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Header */
+header {
+  text-align:center;
+  padding: 100px 20px 50px 20px;
+  background: rgba(10,10,10,0.85);
+}
+header h1 { font-size: 3em; color: #f0c27b; margin-bottom:10px;}
+header p { font-size: 1.2em; color:#d1d1d1; }
+
+/* Titles */
+h2 { font-size:2em; color:#f0c27b; margin-bottom:20px; border-bottom:2px solid #f0c27b; display:inline-block; padding-bottom:5px; }
+
+/* Lists */
+ul { list-style:none; padding-left:0; }
+ul li { border-left:3px solid #f0c27b; padding-left:10px; margin-bottom:15px; }
+
+/* Quotes */
+.quote { font-style:italic; text-align:center; font-size:1.2em; color:#ffd580; margin:30px 0; }
+
+/* Motto */
+.motto { text-align:center; font-size:1.5em; font-style:italic; margin:40px 20px; color:#ffd580; background: rgba(26,26,26,0.7); padding:20px; border-radius:10px; }
+
+/* Footer */
+footer { text-align:center; padding:40px 20px; font-size:0.9em; color:#bbb; border-top:1px solid #444; }
+
+/* Floating butterflies */
+.butterfly { position:absolute; width:40px; height:40px; background: url('assets/butterfly.png') no-repeat center/contain; animation: fly 20s infinite; opacity:0.8; }
+@keyframes fly {
+  0% {transform:translate(0,0) rotate(0deg);}
+  25% {transform:translate(100px,-50px) rotate(45deg);}
+  50% {transform:translate(-150px,100px) rotate(-30deg);}
+  75% {transform:translate(200px,-100px) rotate(60deg);}
+  100% {transform:translate(0,0) rotate(0deg);}
 }
 
 /* Stars */
@@ -25,31 +74,6 @@ body {
 /* Snowflakes */
 .snowflake { position:absolute; top:-10px; width:8px; height:8px; background:white; border-radius:50%; opacity:0.8; animation: fall linear infinite; }
 @keyframes fall { 0% {transform:translateY(0) translateX(0);opacity:0.8;} 100% {transform:translateY(110vh) translateX(30px);opacity:0.3;} }
-
-/* Butterflies */
-.butterfly { position:absolute; width:40px; height:40px; background: url('assets/butterfly.png') no-repeat center/contain; animation: fly 20s infinite; opacity:0.8; }
-@keyframes fly { 0% {transform:translate(0,0) rotate(0deg);} 25% {transform:translate(100px,-50px) rotate(45deg);} 50% {transform:translate(-150px,100px) rotate(-30deg);} 75% {transform:translate(200px,-100px) rotate(60deg);} 100% {transform:translate(0,0) rotate(0deg);} }
-
-/* Header */
-header { text-align:center; padding:80px 20px 50px 20px; background: rgba(26,26,26,0.8);}
-header h1 { font-size:2.5em; color:#f0c27b; margin-bottom:10px;}
-header p { font-size:1.2em; color:#d1d1d1; }
-
-/* Sections */
-section { padding:60px 20px; max-width:900px; margin:auto; background: rgba(26,26,26,0.7); border-radius:10px; margin-bottom:40px;}
-section h2 { font-size:2em; color:#f0c27b; margin-bottom:20px; border-bottom:2px solid #f0c27b; display:inline-block; padding-bottom:5px;}
-p, ul li { margin-bottom:15px; }
-ul { list-style:none; padding-left:0; }
-ul li { border-left:3px solid #f0c27b; padding-left:10px; }
-
-/* Quotes */
-.quote { font-style:italic; text-align:center; font-size:1.2em; color:#ffd580; margin:30px 0; }
-
-/* Motto */
-.motto { text-align:center; font-size:1.5em; font-style:italic; margin:40px 20px; color:#ffd580; background: rgba(26,26,26,0.7); padding:20px; border-radius:10px; }
-
-/* Footer */
-footer { text-align:center; padding:40px 20px; font-size:0.9em; color:#bbb; border-top:1px solid #444;}
 </style>
 </head>
 <body>
@@ -79,13 +103,13 @@ footer { text-align:center; padding:40px 20px; font-size:0.9em; color:#bbb; bord
 <p>A soul who experiences life deeply, embracing mystery, beauty, and reflection.</p>
 </header>
 
-<section>
+<section class="section">
 <h2>About Me</h2>
 <p>I am a reflective, sensitive, and imaginative young man with a rich inner world. My personality blends depth, curiosity, and independence with tenderness and emotional intelligence. I value authenticity and simplicity over appearances or trends, choosing experiences and connections that truly resonate with my heart.</p>
 <div class="quote">“That quiet kiss left my pulse screaming her name.”</div>
 </section>
 
-<section>
+<section class="section">
 <h2>Personality Traits</h2>
 <ul>
 <li>I am reflective and observant; I notice details others might miss, whether in nature, people, or life itself. I process my thoughts internally and carefully analyze emotions and situations.</li>
@@ -99,7 +123,7 @@ footer { text-align:center; padding:40px 20px; font-size:0.9em; color:#bbb; bord
 <div class="quote">“That gentle kiss echoed louder than words.”</div>
 </section>
 
-<section>
+<section class="section">
 <h2>Interests & Passions</h2>
 <ul>
 <li>I love arts and stories: dark fantasy, love stories, spiritual tales, poetry, and music (classic and contemporary) captivate my imagination.</li>
@@ -111,7 +135,7 @@ footer { text-align:center; padding:40px 20px; font-size:0.9em; color:#bbb; bord
 <div class="quote">“My pulse is still learning her rhythm.”</div>
 </section>
 
-<section>
+<section class="section">
 <h2>Behavioral Patterns</h2>
 <ul>
 <li>I prefer listening and observing over performing.</li>
@@ -121,7 +145,7 @@ footer { text-align:center; padding:40px 20px; font-size:0.9em; color:#bbb; bord
 </ul>
 </section>
 
-<section>
+<section class="section">
 <h2>Nicknames & Personal Touch</h2>
 <ul>
 <li>Bunny: My playful, gentle, affectionate, approachable side.</li>
@@ -129,18 +153,32 @@ footer { text-align:center; padding:40px 20px; font-size:0.9em; color:#bbb; bord
 </ul>
 </section>
 
-<section>
+<section class="section">
 <h2>Essence</h2>
 <p>I am a soul who experiences life deeply — drawn to mystery, beauty, and reflection. I navigate life with quiet intensity, valuing meaningful experiences, creative expression, and emotional depth. I am independent yet capable of profound loyalty, and while I may keep much of myself private, my inner world is rich, complex, and full of wonder.</p>
 </section>
 
-<div class="motto">
+<div class="motto section">
 “Seek depth, embrace beauty, honor solitude, and create a world that reflects the soul.”
 </div>
 
 <footer>
 © 2025 Iqbal – Bunny. All rights reserved.
 </footer>
+
+<script>
+// Fade-in sections on scroll
+const sections = document.querySelectorAll('.section');
+window.addEventListener('scroll', () => {
+  const triggerBottom = window.innerHeight / 5 * 4;
+  sections.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+    if(sectionTop < triggerBottom) {
+      section.classList.add('visible');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
