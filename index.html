@@ -4,8 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Iqbal – My Inner Portrait</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-* { margin:0; padding:0; box-sizing:border-box; font-family:Verdana,sans-serif; scroll-behavior: smooth; }
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif; scroll-behavior: smooth; }
 
 body {
   background: url('assets/winter-night.jpg') no-repeat center center fixed;
@@ -15,9 +18,9 @@ body {
   overflow-x: hidden;
 }
 
-/* Overlay for dark theme sections */
+/* Section styling */
 .section {
-  background: rgba(20,20,20,0.8);
+  background: rgba(20,20,20,0.85);
   padding: 60px 20px;
   max-width: 900px;
   margin: 50px auto;
@@ -26,13 +29,11 @@ body {
   transform: translateY(50px);
   transition: opacity 1s ease, transform 1s ease;
 }
-
 .section.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Header */
 header {
   text-align:center;
   padding: 100px 20px 50px 20px;
@@ -41,17 +42,13 @@ header {
 header h1 { font-size: 3em; color: #f0c27b; margin-bottom:10px;}
 header p { font-size: 1.2em; color:#d1d1d1; }
 
-/* Titles */
+/* Titles and Lists */
 h2 { font-size:2em; color:#f0c27b; margin-bottom:20px; border-bottom:2px solid #f0c27b; display:inline-block; padding-bottom:5px; }
-
-/* Lists */
 ul { list-style:none; padding-left:0; }
 ul li { border-left:3px solid #f0c27b; padding-left:10px; margin-bottom:15px; }
 
-/* Quotes */
+/* Quotes & Motto */
 .quote { font-style:italic; text-align:center; font-size:1.2em; color:#ffd580; margin:30px 0; }
-
-/* Motto */
 .motto { text-align:center; font-size:1.5em; font-style:italic; margin:40px 20px; color:#ffd580; background: rgba(26,26,26,0.7); padding:20px; border-radius:10px; }
 
 /* Footer */
@@ -74,6 +71,12 @@ footer { text-align:center; padding:40px 20px; font-size:0.9em; color:#bbb; bord
 /* Snowflakes */
 .snowflake { position:absolute; top:-10px; width:8px; height:8px; background:white; border-radius:50%; opacity:0.8; animation: fall linear infinite; }
 @keyframes fall { 0% {transform:translateY(0) translateX(0);opacity:0.8;} 100% {transform:translateY(110vh) translateX(30px);opacity:0.3;} }
+
+/* Responsive */
+@media(max-width:768px){
+  header h1 { font-size:2.2em;}
+  h2 { font-size:1.6em;}
+}
 </style>
 </head>
 <body>
@@ -112,13 +115,13 @@ footer { text-align:center; padding:40px 20px; font-size:0.9em; color:#bbb; bord
 <section class="section">
 <h2>Personality Traits</h2>
 <ul>
-<li>I am reflective and observant; I notice details others might miss, whether in nature, people, or life itself. I process my thoughts internally and carefully analyze emotions and situations.</li>
-<li>I am introverted and deeply emotional; I experience feelings intensely but often keep them private. I prefer observing and supporting quietly rather than performing or seeking attention.</li>
+<li>I am reflective and observant; I notice details others might miss, whether in nature, people, or life itself.</li>
+<li>I am introverted and deeply emotional; I experience feelings intensely but often keep them private.</li>
 <li>I am curious and imaginative; I love exploring ideas, worlds, and possibilities — from dark fantasy and novels to spiritual and philosophical concepts.</li>
 <li>I am loyal and devoted; my six-year-long relationship shows my capacity for deep commitment and enduring love.</li>
-<li>I am independent and free-spirited; I value autonomy and prefer to carve my own path, whether in creative projects, traveling, or personal pursuits.</li>
-<li>I am sensitive and aesthetic; I have a refined appreciation for beauty, seen in my love of poetry, music, butterflies, cats, and nature’s landscapes.</li>
-<li>I am philosophical and spiritual; discussing life, exploring meaning, and my Muslim faith give my life depth and structure, guiding my values and worldview.</li>
+<li>I am independent and free-spirited; I value autonomy and prefer to carve my own path.</li>
+<li>I am sensitive and aesthetic; I have a refined appreciation for beauty, seen in poetry, music, butterflies, cats, and nature.</li>
+<li>I am philosophical and spiritual; discussing life and my Muslim faith give my life depth and structure.</li>
 </ul>
 <div class="quote">“That gentle kiss echoed louder than words.”</div>
 </section>
@@ -126,8 +129,8 @@ footer { text-align:center; padding:40px 20px; font-size:0.9em; color:#bbb; bord
 <section class="section">
 <h2>Interests & Passions</h2>
 <ul>
-<li>I love arts and stories: dark fantasy, love stories, spiritual tales, poetry, and music (classic and contemporary) captivate my imagination.</li>
-<li>I love nature and solitude: winter nights, mountains, valleys, lakes, deserts, grasslands, and walking alone give me peace and inspiration.</li>
+<li>I love arts and stories: dark fantasy, love stories, spiritual tales, poetry, and music (classic and contemporary).</li>
+<li>I love nature and solitude: winter nights, mountains, valleys, lakes, deserts, grasslands, and walking alone.</li>
 <li>I enjoy technology and creativity; while I’m not a programmer, I leverage AI to create websites and explore digital creativity.</li>
 <li>I love animals and small beauties; butterflies and cats reflect my love for gentle, simple, and symbolic beauty.</li>
 <li>I love travel and exploration; I enjoy experiencing life broadly — physically exploring landscapes and mentally exploring ideas.</li>
@@ -140,7 +143,7 @@ footer { text-align:center; padding:40px 20px; font-size:0.9em; color:#bbb; bord
 <ul>
 <li>I prefer listening and observing over performing.</li>
 <li>I support others quietly rather than seeking recognition.</li>
-<li>I enjoy deep immersion in books, games, or music rather than casual, superficial engagement.</li>
+<li>I enjoy deep immersion in books, games, or music rather than casual engagement.</li>
 <li>I favor simplicity and authenticity over fashion, trends, or societal pressures.</li>
 </ul>
 </section>
@@ -167,17 +170,28 @@ footer { text-align:center; padding:40px 20px; font-size:0.9em; color:#bbb; bord
 </footer>
 
 <script>
-// Fade-in sections on scroll
+// Fade-in sections
 const sections = document.querySelectorAll('.section');
 window.addEventListener('scroll', () => {
   const triggerBottom = window.innerHeight / 5 * 4;
   sections.forEach(section => {
     const sectionTop = section.getBoundingClientRect().top;
-    if(sectionTop < triggerBottom) {
-      section.classList.add('visible');
-    }
+    if(sectionTop < triggerBottom) section.classList.add('visible');
   });
 });
+
+// Dynamic Quotes
+const quotes = [
+  "That quiet kiss left my pulse screaming her name.",
+  "That gentle kiss echoed louder than words.",
+  "My pulse is still learning her rhythm."
+];
+let quoteIndex = 0;
+setInterval(() => {
+  const quoteElems = document.querySelectorAll('.quote');
+  quoteElems.forEach(el => el.textContent = quotes[quoteIndex]);
+  quoteIndex = (quoteIndex + 1) % quotes.length;
+}, 8000);
 </script>
 
 </body>
